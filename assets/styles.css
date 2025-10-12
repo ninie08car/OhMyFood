@@ -13,10 +13,9 @@
     --greenfont:#eafbff;
     --background:#f6f6f6;
 }
-body {
-    margin: 0;
-    width: 100%;
+body{
     background: #f6f6f6;
+    margin: 0;
 }
 h1{
     font-size: 16px;
@@ -66,10 +65,10 @@ h1{
     font-size: 16px;
     gap: 17px;
     padding: 10px;
-    background-color: #eaeaea;
-    background: linear-gradient(var(--grey), var(--grey2)25%);
+    background: linear-gradient(#353535, #eaeaea);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
 }
+
 /*Section Hero*/
 .hero{
     display: flex;
@@ -77,6 +76,7 @@ h1{
     align-items: center;
     padding: 30px;
     margin:30px;
+    background-color: transparent;
 }
 .hero h1{
     width: 275px;
@@ -104,9 +104,70 @@ h1{
 
 /*Section Fonctionnement*/
 .fonctionnement{
-    background: white;
+    background-color: white;
+    padding:20px;
+}
+.fonctionnement h1{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.steps {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  align-items: center;
+  gap: 30px; /* espace entre les bulles */
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  background: #f6f6f6;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  width: 100%; /* ajuste selon ton design */
+  height:72px ;
+  font-size: 16px;
+  font-weight:bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+}
+
+.step-number {
+  background: #a855f7; /* violet */
+  color: white;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 13px;
+}
+
+.step-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-icon {
+  width: 13px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.step-text {
+  font-size: 15px;
+  color: #333;
 }
 
 /*Section Restaurants*/
-
+.restaurant-cards img{
+    width: 100%;
+}
 /*Footer*/
