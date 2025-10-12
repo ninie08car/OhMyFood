@@ -8,7 +8,7 @@
     --grey2:#eaeaea;
     --blue:#89c8fa;
     --blue2:#c5e2f8;
-    --primary:#d5f0f8;
+    --primary:#9356dc;
     --green:#99e2d0;
     --greenfont:#eafbff;
     --background:#f6f6f6;
@@ -16,6 +16,7 @@
 body {
     margin: 0;
     width: 100%;
+    background: #f6f6f6;
 }
 h1{
     font-size: 16px;
@@ -39,6 +40,7 @@ h1{
     padding: 17px;
     justify-content: center;
     position: relative;
+    background-color: white;
 }
 .header i.fa-arrow-left {
     position: absolute;
@@ -61,18 +63,49 @@ h1{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    font-size: 19px;
-    gap: 30px;
-    background-color: #f6f6f6;
+    font-size: 16px;
+    gap: 17px;
+    padding: 10px;
+    background-color: #eaeaea;
     background: linear-gradient(var(--grey), var(--grey2)25%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
 }
-
 /*Section Hero*/
-
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin:30px;
+}
+.hero h1{
+    width: 275px;
+    height: 68px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+.hero p{
+    width: 315px;
+    height: 46px;
+    text-align: center;
+    margin-top: 0;
+}
+.btn-round{
+    width: 218px ;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(#fcc0ce, #9356dc); /* Dégradé linéaire */
+    color: white;
+    font-size: medium;
+}
 
 /*Section Fonctionnement*/
+.fonctionnement{
+    background: white;
+}
 
 /*Section Restaurants*/
 
