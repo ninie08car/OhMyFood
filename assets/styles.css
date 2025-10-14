@@ -3,17 +3,19 @@
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-:root{
-    --pink:#fcc0ce;
-    --grey: #353533;
-    --grey2:#eaeaea;
-    --blue:#89c8fa;
-    --blue2:#c5e2f8;
-    --primary:#9356dc;
-    --green:#99e2d0;
-    --greenfont:#008766;
-    --background:#f6f6f6;
+:root {
+  --pink: #fcc0ce;
+  --grey: #353533;
+  --grey2: #eaeaea;
+  --blue: #89c8fa;
+  --blue2: #c5e2f8;
+  --primary: #9356dc;
+  --green: #99e2d0;
+  --greenfont: #008766;
+  --background: #f6f6f6;
 }
+
+
 body{
     background: #f6f6f6;
     margin: 0;
@@ -56,6 +58,7 @@ a{
     justify-content: center;
     position: relative;
     background-color: white;
+    box-shadow: 0px 4px 4px rgba(53, 53, 53, 0.25);
 }
 .header i.fa-arrow-left {
     position: absolute;
@@ -79,10 +82,11 @@ a{
     align-items: center;
     justify-content: center;
     font-size: 16px;
+    font-weight: 500;
     gap: 17px;
     padding: 10px;
-    background: linear-gradient(#353535, #eaeaea);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
+    background:#eaeaea;
+    box-shadow: 0px 4px 4px rgba(53, 53, 53, 0.25);
 }
 
 /*Section Hero*/
@@ -94,7 +98,7 @@ a{
     margin:30px;
     background-color: transparent;
 }
-.hero h1{
+.hero-title{
     width: 275px;
     height: 68px;
     text-align: center;
@@ -113,7 +117,9 @@ a{
     height: 50px;
     border: none;
     border-radius: 30px;
-    background: linear-gradient( #fcc0ce,#9356dc);
+    background: linear-gradient(to top, #9356dc 0%, #ff79da 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+
 
     color: white;
     font-size: medium;
@@ -141,7 +147,7 @@ a{
   display: flex;
   align-items: center;
   gap: 10px;
-  justify-content: flex-start;
+  justify-content: center;
   min-width: 0;
   width: 100%;
 }
@@ -192,8 +198,7 @@ a{
 
 /*Section Restaurants*/
 .restaurants {
-    width: 340px;
-    padding: 20px;
+    margin: 20px;
     box-sizing: border-box;
 }
 
@@ -212,22 +217,28 @@ a{
 }
 
 .restaurants-cards .card {
-    position: relative;
-    display: inline-block;
-    border-radius: 20px;
-    background-color: white;
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+    height: 251px;
+    background: white;
+    border-radius: 15px;
 }
 
+.image-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 231px;
+    overflow: hidden;
+    justify-content: center;
+}
 
 .restaurants-cards img {
   display: block;
-  max-width: 100%;
-  max-height: auto;
-  width: auto;
-  height: auto;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   object-fit:cover
 }
 
@@ -241,7 +252,6 @@ a{
       font-size: 14px;
       font-weight: bold;
       border-radius: 5px;
-      text-transform: uppercase;
 }
 
 .card-header{
@@ -251,22 +261,16 @@ a{
 }
 
 .card-txt{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding:10px;
 }
 
 .card-title{
-    font-size: 1.1em;
     margin: 0;
-}
-
-.restaurants h3{
-    margin:0;
     font-size: 18px;
     font-weight: bold;
 }
 
-.restaurants p{
+.card-subtitle{
     margin:0;
     font-size: 17px;
     font-weight: lighter;
@@ -284,7 +288,7 @@ a{
 .footer-container img{
     width: 139px;
     height: 27px;
-    filter: invert(1);
+    filter: invert(1) brightness(1.5);
     padding-left: 10px;
 }
 
@@ -298,4 +302,8 @@ a{
 .footer-txt i{
     width: 24px;
     height: 12px;
+}
+
+@media screen and (min-width: 1440px) {
+  /* Styles pour la version desktop */
 }
