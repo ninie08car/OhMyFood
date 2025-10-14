@@ -23,7 +23,7 @@ h1{
 }
 
 .fa-solid{
-    font-size: 16px;
+    font-size: 22px;
 }
 
 a{
@@ -113,7 +113,8 @@ a{
     height: 50px;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(#fcc0ce, #9356dc); /* Dégradé linéaire */
+    background: linear-gradient( #fcc0ce,#9356dc);
+
     color: white;
     font-size: medium;
 }
@@ -270,5 +271,31 @@ a{
     font-size: 17px;
     font-weight: lighter;
 }
+.fa-heart {
+  font-size: 24px;
+}
 
 /*Footer*/
+.footer-container{
+    padding: 20px;
+    background: black;
+    color: white;
+}
+.footer-container img{
+    width: 139px;
+    height: 27px;
+    filter: invert(1);
+    padding-left: 10px;
+}
+
+.footer-txt{
+    padding: 10px;
+}
+.footer-txt p{
+    display: flex;
+    gap: 10px;
+}
+.footer-txt i{
+    width: 24px;
+    height: 12px;
+}
