@@ -1,23 +1,26 @@
 $pink : #fcc0ce;
+$pink2:#ff79da;
 $grey: #353533;
 $grey2: #eaeaea;
 $blue: #89c8fa;
 $blue2: #c5e2f8;
 $primary: #9356dc;
+$purple:#a855f7;
 $green: #99e2d0;
 $greenfont: #008766;
 $background: #f6f6f6;
+$shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 /*Général*/
 *{
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#body{
+body{
     background: $background;
     margin: 0;
 }
-#h1{
+h1{
     font-size: 16px;
     font-weight: 500;
 }
@@ -26,7 +29,7 @@ $background: #f6f6f6;
     font-weight: bold;
     margin-top: 0;
   }
-#p{
+p{
     font-size: 18px;
     font-weight: 200;
     margin: 0;
@@ -34,7 +37,7 @@ $background: #f6f6f6;
 .fa-solid{
     font-size: 16px;
 }
-#a{
+a{
     color: inherit;
     text-decoration: none;
 }
@@ -42,6 +45,9 @@ $background: #f6f6f6;
     object-fit: cover;
 }
 
+.header, .location, .btn-round, .step-content {
+  box-shadow: $shadow;
+}
 /*Header*/
 .header-container{
     width: 100%;
@@ -57,7 +63,6 @@ $background: #f6f6f6;
         justify-content: center;
         position: relative;
         background-color: white;
-        box-shadow: 0px 4px 4px rgba(53, 53, 53, 0.25);
         .fa-arrow-left {
             position: absolute;
             width: 30px;
@@ -69,7 +74,7 @@ $background: #f6f6f6;
         }
         .logo{
             justify-content: center;
-            #img{
+            img{
                 width: 197px;
                 height:36px;
             }
@@ -82,8 +87,7 @@ $background: #f6f6f6;
         justify-content: center;
         gap: 17px;
         padding: 10px;
-        background:#eaeaea;
-        box-shadow: 0px 4px 4px rgba(53, 53, 53, 0.25);
+        background:$grey2;
     }
 }
 
@@ -101,7 +105,7 @@ $background: #f6f6f6;
         text-align: center;
         margin: 0;
     }
-    #p{
+    p{
         width: 315px;
         height: 46px;
         text-align: center;
@@ -112,8 +116,7 @@ $background: #f6f6f6;
         height: 50px;
         border: none;
         border-radius: 30px;
-        background: linear-gradient(to top, #9356dc 0%, #ff79da 100%);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to top, $primary 0%, $pink2 100%);
         color: white;
         font-size: medium;
     }
@@ -127,60 +130,60 @@ $background: #f6f6f6;
         margin-bottom:20px;
         font-size: 24px;
         font-weight: bold;
-        .steps {
+    }
+    .steps {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+        gap: 30px; /* espace entre les bulles */
+    }
+    .step {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        min-width: 0;
+        width: 100%;
+        .step-number {
+            background: $purple; 
+            color: white;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
             display: flex;
-            flex-direction: column;
-            margin: 0;
             align-items: center;
-            gap: 30px; /* espace entre les bulles */
-        }
-        .step {
-            display: flex;
-            align-items: center;
-            gap: 10px;
             justify-content: center;
-            min-width: 0;
-            width: 100%;
-            .step-number {
-                background: #a855f7; /* violet */
-                color: white;
-                font-weight: bold;
-                width: 24px;
-                height: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                font-size: 13px;
-                position: relative;
-                z-index: 2;
+            border-radius: 50%;
+            font-size: 13px;
+            position: relative;
+            z-index: 2;
+        }
+        .step-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: $background;
+            border-radius: 20px;
+            padding: 8px 16px;
+            width: 322px; /* ajuste selon ton design */
+            height:72px ;
+            font-size: 16px;
+            font-weight:bold;
+            position: relative;
+            z-index: 1;
+            margin-left: -22px;
+            .fa-solid{
+                width: 13px;
+                height: 20px;
+                object-fit: contain;
             }
-            .step-content {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                background: #f6f6f6;
-                border-radius: 20px;
-                padding: 8px 16px;
-                width: 322px; /* ajuste selon ton design */
-                height:72px ;
-                font-size: 16px;
-                font-weight:bold;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Ombre */
-                position: relative;
-                z-index: 1;
-                margin-left: -22px;
-                .fa-solid{
-                    width: 13px;
-                    height: 20px;
-                    object-fit: contain;
-                }
-                .step-text {
-                    font-size: 15px;
-                    color: #333;
-                }
+            .step-text {
+                font-size: 15px;
+                color: black;
             }
+            
         }
     }
 }
@@ -206,7 +209,7 @@ $background: #f6f6f6;
                 height: 231px;
                 overflow: hidden;
                 justify-content: center;
-                #img {
+                img {
                     display: block;
                     width: 100%;
                     height: 100%;
@@ -218,8 +221,8 @@ $background: #f6f6f6;
                     position: absolute;
                     top: 10px;
                     right: 10px;
-                    background-color: var(--green);
-                    color: var(--greenfont);
+                    background-color:$green;
+                    color: $greenfont;
                     padding: 5px 10px;
                     font-size: 14px;
                     font-weight: bold;
@@ -240,7 +243,7 @@ $background: #f6f6f6;
                         }
                         .fa-regular{
                             font-size: 24px;
-                            color: #9356dc;
+                            color: $primary;
                         }
                     }
                 }
@@ -270,14 +273,14 @@ $background: #f6f6f6;
             flex-direction: column;
             gap: 10px;
             text-align: left;
-            #p{
+            p{
                 margin: 0;
                 font-size: 16px;
             }
-            #p:has(i) {
+            p:has(i) {
                 font-weight: 500; /* Medium */
             }
-            #i{
+            i{
                 margin-right: 12px;
                 width: 12px;
                 height: 12px;
@@ -313,7 +316,7 @@ $background: #f6f6f6;
             text-align: center;
             margin: 0;
         }
-        #p{
+        p{
             width: 100%;
             font-size: 20px;
         }
@@ -345,7 +348,7 @@ $background: #f6f6f6;
                 flex-grow: 1; 
                 flex-basis: 0;
                 min-width: 40%;
-                #img{
+                img{
                     width: 100%;
                     height: 180px;
                     border-top-left-radius: 20px;
@@ -372,7 +375,7 @@ $background: #f6f6f6;
             justify-content: flex-end;
             align-items: baseline;
             gap: 30px;                         /* espace entre les liens */
-            #p:nth-child(2){
+            p:nth-child(2){
                 margin-right: 40px;
             }
         }
