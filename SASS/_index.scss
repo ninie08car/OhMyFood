@@ -1,14 +1,14 @@
-$pink : #fcc0ce;
+$pink:#fcc0ce;
 $pink2:#ff79da;
 $grey: #353533;
-$grey2: #eaeaea;
-$blue: #89c8fa;
-$blue2: #c5e2f8;
-$primary: #9356dc;
+$grey2:#eaeaea;
+$blue:#89c8fa;
+$blue2:#c5e2f8;
+$primary:#9356dc;
 $purple:#a855f7;
-$green: #99e2d0;
-$greenfont: #008766;
-$background: #f6f6f6;
+$green:#99e2d0;
+$greenfont:#008766;
+$background:#f6f6f6;
 $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 /*Général*/
@@ -43,7 +43,11 @@ a{
 }
 .card {
     img{
-        object-fit: cover;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     }
 }
 
@@ -111,7 +115,7 @@ a{
         width: 315px;
         height: 46px;
         text-align: center;
-        margin-top: 0;
+        margin-top: 10px;
     }
     .btn-round{
         width: 218px ;
@@ -121,6 +125,7 @@ a{
         background: linear-gradient(to top, $primary 0%, $pink2 100%);
         color: white;
         font-size: medium;
+        margin-top: 30px;
     }
 }
 
@@ -164,7 +169,7 @@ a{
         .step-content {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: left;
             gap: 8px;
             background: $background;
             border-radius: 20px;
@@ -179,13 +184,15 @@ a{
             .fa-solid{
                 width: 13px;
                 height: 20px;
-                object-fit: contain;
+                margin: 20px;
             }
             .step-text {
                 font-size: 15px;
                 color: black;
             }
-            
+            .fa-store{
+                color: $primary;
+            }
         }
     }
 }
@@ -194,7 +201,7 @@ a{
 .restaurants {
     margin: 0;
     box-sizing: border-box;
-    padding: 18px;
+    padding: 50px 18px;
 
     .restaurants-cards{
         display: flex;
@@ -214,14 +221,6 @@ a{
                 height: 231px;
                 overflow: hidden;
 
-                img {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    border-top-left-radius: 15px;
-                    border-top-right-radius: 15px;
-                    object-fit:cover
-                }
                 .badge {
                     position: absolute;
                     top: 10px;
@@ -248,11 +247,12 @@ a{
                         font-weight: bold;
                     }
 
-                    .fa-herat{
-                        font-size: 24px;
+                    .fa-heart{
+                        font-size: 22px;
+                        font-weight: 200;
                     }
                 }
-            }
+            }             
         }
     }
 }
@@ -263,17 +263,16 @@ a{
 .footer-container{
     background-color: black;
     color:white;
-    padding: 20px;
+    padding: 30px;
 
     .footer{
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
 
         img{
             width: 139px;
             height: 27px;
-            align-self: left;
             filter: invert(1) brightness(1.5);
         }
 
@@ -338,7 +337,7 @@ a{
     }
 
     .fonctionnement{
-        padding:50px 180px;
+        padding:50px 20px 180px;
 
         .steps{
             flex-direction: row;
@@ -363,15 +362,6 @@ a{
             padding-left: 180px;
             padding-right: 180px;
 
-            img{
-                width: 100%;
-                height: 180px;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-                object-fit: cover;
-                display: block;
-            }
-
             a{
                 flex-grow: 1; 
                 flex-basis: 0;
@@ -384,26 +374,31 @@ a{
         }
     }
     .footer-container {
+        display: flex;
         flex-direction: row;               /* met logo + liens sur la même ligne */
         align-items: flex-end;
         justify-content: flex-end; 
         height: 114px;
         padding: 30px 25px 30px 25px;
+        .footer{
+            display: flex;
+            flex-direction: row-reverse;
 
-        img{
-            margin-right: 40px; 
-            margin-left: 40px; 
-        }
-
-        .footer-links {
-            flex-direction: row;  
-            justify-content: flex-end;
-            align-items: baseline;
-            gap: 30px;  
-
-            p:nth-child(2){
-                margin-right: 40px;
+            img{
+                margin-right: 40px; 
+                margin-left: 40px; 
             }
-        }
+
+            .footer-links {
+                flex-direction: row;  
+                justify-content: flex-end;
+                align-items: baseline;
+                gap: 30px;  
+
+                p:nth-child(2){
+                    margin-right: 40px;
+                }
+            }
+        }        
     }
 }
