@@ -15,13 +15,13 @@
     <body>
         <header class="header-container">
             <div class="header">
-                <i class="fa-solid fa-arrow-left"></i>
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                 <div class="logo">
-                    <img src="assets/images/logo/ohmyfood.png" alt="Logo HoMyFood">
+                    <img src="assets/images/logo/ohmyfood.png" alt="Logo HoMyFood, page d'accueil">
                 </div>
             </div>                
             <div class="location">
-                <i class="fa-solid fa-location-dot"></i>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <h1>Paris, Belleville</h1>
             </div>
         </header>
@@ -29,7 +29,7 @@
             <section class="hero">
                 <h2 class="section-title">Réserver le menu qui vous convient</h2>
                 <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-                <button type="submit" class="btn-round">Exporer nos restaurants</button>
+                <button type="submit" class="btn-round">Explorer nos restaurants</button>
             </section>
             <section class="fonctionnement">
                 <h2 class="section-title">Fonctionnement</h2>
@@ -37,21 +37,21 @@
                     <div class="step"> 
                         <div class="step-number">1</div>                       
                         <div class="step-content">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
                             <span class="step-text">Choisissez un restaurant</span>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <i class="fa-solid fa-list-ul"></i>
+                            <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
                             <span class="step-text">Composez votre menu</span>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <i class="fa-solid fa-store"></i>
+                            <i class="fa-solid fa-store" aria-hidden="true"></i>
                             <span class="step-text">Dégustez au restaurant</span>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                                 <div class="card-txt">
                                     <div class="card-header">
                                         <h3 class="card-title">La palette du goût</h3>
-                                        <i class="fa-regular fa-heart"></i>                                        
+                                        <button type="submit" class="btn-like"><i class="fa-regular fa-heart"></i>Like</button>                                        
                                     </div>
                                     <p class="card-subtitle">Ménilmontant</p>
                                 </div>                                
@@ -87,35 +87,39 @@
                                 <div class="card-txt">
                                     <div class="card-header">
                                         <h3 class="card-title">La note enchantée</h3>
-                                        <i class="fa-solid fa-heart purple"></i>                                        
+                                        <button type="submit" class="btn-like"><i class="fa-regular fa-heart"></i>Like</button>                                   
                                     </div>
                                     <p>Charonne</p>
                                 </div>                                
                             </div>
                         </article>
                     </a>
-                     <a href="">
+                    <a href="">
                         <article class="card">
-                            <img src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image du restaurant">
+                            <div class="image-container">
+                                <img src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Image du restaurant">
+                            </div>    
                             <div class="card-content">                      
                                 <div class="card-txt">
                                     <div class="card-header">
                                         <h3 class="card-title">A la française</h3>
-                                        <i class="fa-solid fa-heart purple"></i>                                        
+                                        <button type="submit" class="btn-like"><i class="fa-solid fa-heart purple"></i>Like</button>                              
                                     </div>
                                     <p>Cité Rouge</p>
                                 </div>                                
                             </div>
                         </article>
                     </a>
-                     <a href="">
+                    <a href="">
                         <article class="card">
-                            <img src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du restaurant"> 
+                            <div class="image-container">
+                                <img src="assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Image du restaurant"> 
+                            </div>
                             <div class="card-content">                      
                                 <div class="card-txt">
                                     <div class="card-header">
                                         <h3 class="card-title">Le délice des sens</h3>
-                                        <i class="fa-regular fa-heart"></i>                                        
+                                        <button type="submit" class="btn-like"><i class="fa-regular fa-heart"></i>Like</button>                                  
                                     </div>
                                     <p>Folie-Méricourt</p>
                                 </div>                                
