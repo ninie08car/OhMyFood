@@ -115,7 +115,7 @@ a{
             flex-direction: row;
             justify-content: space-between;
             padding-top: 30px;
-            width: 100%;
+            width: 100%;  
             .btn-like{
                 border: none;
                 background: none;
@@ -127,6 +127,19 @@ a{
             gap:10px;
             margin-top: 30px;
             width: 100%;
+            .section-title{
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -5px; // espace entre le texte et le trait
+                    width: 60px;  // longueur du trait (ajuste selon ton design)
+                    height: 4px;  // épaisseur du trait
+                    background-color: #7fffd4; // vert menthe clair
+                    border-radius: 2px;
+                }
+            }
             .card{
                 display: flex;
                 flex-direction: row;

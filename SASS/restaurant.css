@@ -124,6 +124,19 @@ a {
   margin-top: 30px;
   width: 100%;
 }
+.main-container .carte .carte-details .section-title {
+  position: relative;
+}
+.main-container .carte .carte-details .section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 60px;
+  height: 4px;
+  background-color: #7fffd4;
+  border-radius: 2px;
+}
 .main-container .carte .carte-details .card {
   display: flex;
   flex-direction: row;
