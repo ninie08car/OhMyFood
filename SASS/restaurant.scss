@@ -124,7 +124,7 @@ a{
         .carte-details{
             display: flex;
             flex-direction: column;
-            gap:10px;
+            gap: 12px;;
             margin-top: 30px;
             width: 100%;
             .section-title{
@@ -218,5 +218,56 @@ a{
                 height: 12px;
             }
         }
+    }
+}
+
+@media screen and (min-width: 1020px) {
+  /* Styles pour la version desktop */
+    .main-container{
+        .image-container{
+            height: 383px;
+        }
+        .carte{
+            max-width: 1055px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            .restaurant-title{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .carte-details{
+                max-width: 634px;
+            }
+        }
+    }
+   .footer-container {
+        display: flex;
+        flex-direction: row;     
+        align-items: flex-end;
+        justify-content: flex-end; 
+        height: 114px;
+        padding: 30px 25px 30px 25px;
+        .footer{
+            display: flex;
+            flex-direction: row-reverse;
+
+            img{
+                margin-right: 40px; 
+                margin-left: 40px; 
+            }
+
+            .footer-links {
+                flex-direction: row;  
+                justify-content: flex-end;
+                align-items: baseline;
+                gap: 30px;  
+
+                p:nth-child(2){
+                    margin-right: 40px;
+                }
+            }
+        }        
     }
 }
