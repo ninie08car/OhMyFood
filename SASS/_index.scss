@@ -1,15 +1,4 @@
-$pink:#fcc0ce;
-$pink2:#ff79da;
-$grey: #353533;
-$grey2:#eaeaea;
-$blue:#89c8fa;
-$blue2:#c5e2f8;
-$primary:#9356dc;
-$purple:#a855f7;
-$green:#99e2d0;
-$greenfont:#008766;
-$background:#f6f6f6;
-$shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+@use '_variables.scss' as vars;
 
 /*Général*/
 *{
@@ -17,7 +6,7 @@ $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Roboto";
 }
 body{
-    background: $background;
+    background: vars.$background;
     margin: 0;
 }
 h1{
@@ -53,7 +42,7 @@ a{
 }
 
 .header, .location, .btn-round, .step-content {
-  box-shadow: $shadow;
+  box-shadow: vars.$shadow;
 }
 /*Header*/
 .header-container{
@@ -74,10 +63,9 @@ a{
             position: absolute;
             width: 30px;
             height: 30px;
-            color: $grey;
+            color: vars.$grey;
             align-content: center;
             left:20px;
-            display: none;
         }
         .logo{
             justify-content: center;
@@ -94,7 +82,7 @@ a{
         justify-content: center;
         gap: 17px;
         padding: 10px;
-        background:$grey2;
+        background:vars.$grey2;
     }
 }
 
@@ -160,7 +148,7 @@ a{
         min-width: 0;
         width: 100%;
         .step-number {
-            background: $purple; 
+            background: vars.$purple; 
             color: white;
             font-weight: bold;
             width: 24px;
@@ -178,7 +166,7 @@ a{
             align-items: center;
             justify-content: left;
             gap: 8px;
-            background: $background;
+            background: vars.$background;
             border-radius: 20px;
             padding: 8px 16px;
             width: 322px; /* ajuste selon ton design */
@@ -198,7 +186,7 @@ a{
                 color: black;
             }
             .fa-store{
-                color: $primary;
+                color: vars.$primary;
             }
         }
     }
@@ -233,8 +221,8 @@ a{
                     position: absolute;
                     top: 10px;
                     right: 10px;
-                    background-color:$green;
-                    color: $greenfont;
+                    background-color:vars.$green;
+                    color: vars.$greenfont;
                     padding: 5px 10px;
                     font-size: 14px;
                     font-weight: bold;
@@ -385,7 +373,7 @@ a{
             } 
             
             .card .purple{
-                color:$primary;
+                color:vars.$primary;
             }
         }
     }
