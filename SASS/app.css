@@ -27,10 +27,6 @@ p {
   margin: 0;
 }
 
-.fa-solid {
-  font-size: 16px;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -432,28 +428,38 @@ a {
   height: 67px;
   align-items: center;
   padding: 17px;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   background-color: white;
 }
-.restaurant-page .header-container .header .fa-arrow-left {
+.restaurant-page .header-container .header .arrow {
   width: 30px;
   height: 30px;
   color: #353533;
   align-content: center;
+  margin-right: auto;
+  display: flex;
+}
+.restaurant-page .header-container .header .fa-solid {
+  font-size: 30px;
 }
 .restaurant-page .header-container .header .logo {
-  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
 }
 .restaurant-page .header-container .header .logo img {
   width: 197px;
   height: 36px;
 }
+.restaurant-page .main-container {
+  background-color: white;
+}
 .restaurant-page .main-container .image-container {
   position: relative;
   width: 100%;
-  height: 231px;
+  height: 275px;
   overflow: hidden;
+  z-index: 1;
 }
 .restaurant-page .main-container .image-container img {
   -o-object-fit: cover;
@@ -472,6 +478,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 .restaurant-page .main-container .carte .restaurant-title {
   display: flex;
@@ -479,6 +487,7 @@ a {
   justify-content: space-between;
   padding-top: 30px;
   width: 100%;
+  gap: 24px;
 }
 .restaurant-page .main-container .carte .restaurant-title .btn-like {
   border: none;
@@ -501,7 +510,7 @@ a {
   bottom: -5px;
   width: 60px;
   height: 4px;
-  background-color: #7fffd4;
+  background-color: #99e2d0;
   border-radius: 2px;
 }
 .restaurant-page .main-container .carte .carte-details .card {
@@ -564,8 +573,6 @@ a {
 .restaurant-page .footer-container .footer .footer-links p {
   margin: 0;
   font-size: 16px;
-}
-.restaurant-page .footer-container .footer .footer-links p:has(i) {
   font-weight: 500;
 }
 .restaurant-page .footer-container .footer .footer-links i {

@@ -49,17 +49,23 @@
             height: 67px;
             align-items: center;
             padding: 17px;
-            justify-content: center;
+            justify-content: space-between;
             position: relative;
             background-color: white;
-            .fa-arrow-left {
+            .arrow{
                 width: 30px;
                 height: 30px;
                 color: vars.$grey;
                 align-content: center;
+                margin-right: auto;
+                display: flex;
+            }
+            .fa-solid{
+                font-size: 30px;
             }
             .logo{
-                justify-content: center;
+                flex-grow: 1;
+                text-align: center;
                 img{
                     width: 197px;
                     height:36px;
@@ -69,11 +75,13 @@
     }
 
     .main-container{
+        background-color: white;
         .image-container{
             position: relative;
             width: 100%;
-            height: 231px;
+            height: 275px;
             overflow: hidden;
+            z-index: 1;
             img{
                 object-fit: cover;
                 width: 100%;
@@ -90,12 +98,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            z-index: 2;
             .restaurant-title{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 padding-top: 30px;
                 width: 100%;  
+                gap: 24px;
                 .btn-like{
                     border: none;
                     background: none;
@@ -116,7 +127,7 @@
                         bottom: -5px; // espace entre le texte et le trait
                         width: 60px;  // longueur du trait (ajuste selon ton design)
                         height: 4px;  // épaisseur du trait
-                        background-color: #7fffd4; // vert menthe clair
+                        background-color:vars.$green; // vert menthe clair
                         border-radius: 2px;
                     }
                 }
@@ -182,21 +193,17 @@
                 flex-direction: column;
                 gap: 10px;
                 text-align: left;
-
                 p{
                     margin: 0;
                     font-size: 16px;
-
-                    &:has(i) {
-                        font-weight: 500; 
-                    }
+                    font-weight: 500;
+                    
                 }
-
                 i{
                     margin-right: 12px;
                     width: 12px;
                     height: 12px;
-                }
+                }    
             }
         }
     }
