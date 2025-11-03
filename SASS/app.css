@@ -237,21 +237,49 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Quand le checkbox est coché → on change le style du label */
 }
 .restaurants .restaurants-cards .card .card-txt .card-header .card-title {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
 }
-.restaurants .restaurants-cards .card .card-txt .card-header .btn-like {
-  background: none;
-  border: none;
-  margin-right: 10px;
-  font-size: 22px;
-  transition: all 300ms ease;
+.restaurants .restaurants-cards .card .card-txt .card-header .btn__check {
+  display: none;
 }
-.restaurants .restaurants-cards .card .card-txt .card-header .btn-like:active {
-  color: #9356dc;
+.restaurants .restaurants-cards .card .card-txt .card-header .btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.restaurants .restaurants-cards .card .card-txt .card-header .btn .fa-regular {
+  font-size: 22px;
+  color: #666;
+  transition: opacity 0.25s ease;
+}
+.restaurants .restaurants-cards .card .card-txt .card-header .btn__bg {
+  position: absolute;
+  font-size: 22px;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+          background-clip: text; /* Applique le fond au texte */
+  color: transparent; /* Rend le texte transparent pour voir le fond */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.restaurants .restaurants-cards .card .card-txt .card-header .btn__check:checked + .btn .fa-regular {
+  opacity: 0;
+}
+.restaurants .restaurants-cards .card .card-txt .card-header .btn__check:checked + .btn .btn__bg {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 /*Footer*/
