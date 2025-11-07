@@ -1,6 +1,6 @@
-
 @use '_variables.scss' as vars;
 
+$delay_between_card:1s;
 .restaurant-page{
     /* --- Animation d'apparition depuis la gauche --- */
     @keyframes slide-in-right {
@@ -15,16 +15,16 @@
     }
     .card {
         opacity: 0;
-        animation: slide-in-right 2000ms ease-out forwards;
+        animation: slide-in-right 2s ease-out forwards;
     }
     .card:nth-of-type(1) {
-        animation-delay: 0.3s;
+        animation-delay: $delay_between_card;
     }
     .card:nth-of-type(2) {
-        animation-delay: 0.6s;
+        animation-delay: calc($delay_between_card * 2);
     }
     .card:nth-of-type(3) {
-        animation-delay: 0.9s;
+        animation-delay: calc($delay_between_card * 3);
     }
 
     h1{
@@ -133,10 +133,47 @@
                 padding-top: 30px;
                 width: 100%;  
                 gap: 24px;
-                .btn-like{
-                    border: none;
-                    background: none;
-                }
+                   .btn__check {
+                        display: none;
+                    }
+
+                        .btn {
+                        width: 40px;
+                        height: 40px;
+                        border: none;
+                        background-color: transparent;
+                        position: relative;
+                        cursor: pointer;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        .fa-regular {
+                            font-size: 22px;
+                            color: #666;
+                            transition: opacity 0.25s ease;
+                        }
+
+                        &__bg {
+                            position: absolute;
+                            font-size: 22px;
+                            background: linear-gradient(180deg, #9356dc, #ff79da);
+                            background-clip: text;     /* Applique le fond au texte */
+                            color: transparent; /* Rend le texte transparent pour voir le fond */
+                            opacity: 0;
+                            transform: scale(0.8);
+                            transition: opacity 0.3s ease, transform 0.3s ease;
+                        }
+                    }
+                    /* Quand le checkbox est coché → on change le style du label */
+                    .btn__check:checked + .btn {
+                        .fa-regular {
+                            opacity: 0;
+                        }
+                        .btn__bg {
+                            opacity: 1;
+                            transform: scale(1.1);
+                        }
+                    }
             }
             .carte-details{
                 display: flex;

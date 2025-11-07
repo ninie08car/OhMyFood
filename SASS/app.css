@@ -407,8 +407,32 @@ a {
   }
 }
 .restaurant-page {
+  /* --- Animation d'apparition depuis la gauche --- */
   /*Header*/
   /*Footer*/
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(-9999px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.restaurant-page .card {
+  opacity: 0;
+  animation: slide-in-right 2s ease-out forwards;
+}
+.restaurant-page .card:nth-of-type(1) {
+  animation-delay: 1s;
+}
+.restaurant-page .card:nth-of-type(2) {
+  animation-delay: 2s;
+}
+.restaurant-page .card:nth-of-type(3) {
+  animation-delay: 3s;
 }
 .restaurant-page h1 {
   font-family: shrikhand;
@@ -516,10 +540,44 @@ a {
   padding-top: 30px;
   width: 100%;
   gap: 24px;
+  /* Quand le checkbox est coché → on change le style du label */
 }
-.restaurant-page .main-container .carte .restaurant-title .btn-like {
+.restaurant-page .main-container .carte .restaurant-title .btn__check {
+  display: none;
+}
+.restaurant-page .main-container .carte .restaurant-title .btn {
+  width: 40px;
+  height: 40px;
   border: none;
-  background: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.restaurant-page .main-container .carte .restaurant-title .btn .fa-regular {
+  font-size: 22px;
+  color: #666;
+  transition: opacity 0.25s ease;
+}
+.restaurant-page .main-container .carte .restaurant-title .btn__bg {
+  position: absolute;
+  font-size: 22px;
+  background: linear-gradient(180deg, #9356dc, #ff79da);
+  -webkit-background-clip: text;
+          background-clip: text; /* Applique le fond au texte */
+  color: transparent; /* Rend le texte transparent pour voir le fond */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.restaurant-page .main-container .carte .restaurant-title .btn__check:checked + .btn .fa-regular {
+  opacity: 0;
+}
+.restaurant-page .main-container .carte .restaurant-title .btn__check:checked + .btn .btn__bg {
+  opacity: 1;
+  transform: scale(1.1);
 }
 .restaurant-page .main-container .carte .carte-details {
   display: flex;
