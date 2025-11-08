@@ -28,7 +28,7 @@
   animation-delay: 200ms;
 }
 .loader .load__bar--1-inv {
-  animation-delay: 1685ms;
+  animation-delay: 425ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -41,7 +41,7 @@
   animation-delay: 400ms;
 }
 .loader .load__bar--2-inv {
-  animation-delay: 730ms;
+  animation-delay: 1285ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -54,7 +54,7 @@
   animation-delay: 600ms;
 }
 .loader .load__bar--3-inv {
-  animation-delay: 1710ms;
+  animation-delay: 1170ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -67,7 +67,7 @@
   animation-delay: 800ms;
 }
 .loader .load__bar--4-inv {
-  animation-delay: 935ms;
+  animation-delay: 1925ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -80,7 +80,7 @@
   animation-delay: 1000ms;
 }
 .loader .load__bar--5-inv {
-  animation-delay: 1240ms;
+  animation-delay: 1615ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -556,6 +556,9 @@ a {
 }
 .restaurant-page .card:nth-of-type(3) {
   animation-delay: 3s;
+}
+.restaurant-page .card:nth-of-type(4) {
+  animation-delay: 4s;
 }
 .restaurant-page h1 {
   font-family: shrikhand;

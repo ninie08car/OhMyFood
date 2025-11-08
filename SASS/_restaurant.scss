@@ -28,6 +28,9 @@ $delay_between_card:1s;
     .card:nth-of-type(3) {
         animation-delay: calc($delay_between_card * 3);
     }
+    .card:nth-of-type(4) {
+        animation-delay: calc($delay_between_card * 4);
+    }
 
     h1{
         font-family:shrikhand;
