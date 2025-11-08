@@ -1,4 +1,128 @@
 @charset "UTF-8";
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2.8s forwards;
+}
+.loader .load {
+  width: 30vh;
+  height: 22.5vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+.loader .load__bar {
+  background-color: #9356DC;
+  height: 100%;
+  width: 3vh;
+  animation: bars 1000ms backwards infinite ease-in-out;
+  animation-play-state: running;
+}
+.loader .load__bar--1 {
+  animation-direction: alternate;
+  animation-delay: 200ms;
+}
+.loader .load__bar--1-inv {
+  animation-delay: 1505ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background-color: #FF79DA;
+}
+.loader .load__bar--1-inv:hover {
+  animation-play-state: paused;
+}
+.loader .load__bar--2 {
+  animation-direction: alternate;
+  animation-delay: 400ms;
+}
+.loader .load__bar--2-inv {
+  animation-delay: 1225ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background-color: #FF79DA;
+}
+.loader .load__bar--2-inv:hover {
+  animation-play-state: paused;
+}
+.loader .load__bar--3 {
+  animation-direction: alternate;
+  animation-delay: 600ms;
+}
+.loader .load__bar--3-inv {
+  animation-delay: 1080ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background-color: #FF79DA;
+}
+.loader .load__bar--3-inv:hover {
+  animation-play-state: paused;
+}
+.loader .load__bar--4 {
+  animation-direction: alternate;
+  animation-delay: 800ms;
+}
+.loader .load__bar--4-inv {
+  animation-delay: 1265ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background-color: #FF79DA;
+}
+.loader .load__bar--4-inv:hover {
+  animation-play-state: paused;
+}
+.loader .load__bar--5 {
+  animation-direction: alternate;
+  animation-delay: 1000ms;
+}
+.loader .load__bar--5-inv {
+  animation-delay: 1555ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background-color: #FF79DA;
+}
+.loader .load__bar--5-inv:hover {
+  animation-play-state: paused;
+}
+.loader__title {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.8rem;
+  color: #9356DC;
+  margin-top: 1rem;
+  animation: textFade 3s ease-in-out;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 /*Général*/
 * {
   box-sizing: border-box;

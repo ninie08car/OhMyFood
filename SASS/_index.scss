@@ -1,5 +1,96 @@
 @use '_variables.scss' as vars;
 
+//Loader OhMyFood
+
+// Variables pour le loader
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$cd-bars-inv: #0E397F;
+$size: 3vh;
+$anim-dur: 1000ms;
+$anim-delay: $anim-dur / 5;
+
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2.8s forwards; // disparition après 2,8s
+  .load {
+    width: $size*10;
+    height: $size*7.5;
+    display: flex;
+    justify-content: space-evenly;
+    &__bar {
+        background-color: $primary;
+        height: 100%;
+        width: $size;
+        animation: bars $anim-dur backwards infinite ease-in-out;
+        animation-play-state: running;
+        @for $i from 1 through 5 {
+            &--#{$i} {
+                animation-direction:alternate;
+                animation-delay: $anim-delay * $i;
+            }
+            &--#{$i}-inv {
+                animation-delay: $anim-delay * $i + random(100)*15ms;
+                animation-direction: alternate-reverse;
+                animation-fill-mode: forwards;
+                background-color: $secondary;
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+        }
+    }
+}
+
+  &__title {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.8rem;
+    color: $primary;
+    margin-top: 1rem;
+    animation: textFade 3s ease-in-out;
+  }
+}
+
+// Animations
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}
+
+
 /*Général*/
 *{
     box-sizing: border-box;
