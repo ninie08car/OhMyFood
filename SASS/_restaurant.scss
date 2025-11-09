@@ -129,51 +129,50 @@ $delay_between_card:1s;
             .restaurant-title{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 padding-top: 30px;
-                width: 100%;  
+                max-width: 371px;  
                 gap: 24px;
-                   .btn__check {
-                        display: none;
-                    }
-
-                        .btn {
-                        width: 40px;
-                        height: 40px;
-                        border: none;
-                        background-color: transparent;
-                        position: relative;
-                        cursor: pointer;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        .fa-regular {
-                            font-size: 22px;
-                            color: #666;
-                            transition: opacity 0.25s ease;
-                        }
-
-                        &__bg {
-                            position: absolute;
-                            font-size: 22px;
-                            background: linear-gradient(180deg, #9356dc, #ff79da);
-                            background-clip: text;     /* Applique le fond au texte */
-                            color: transparent; /* Rend le texte transparent pour voir le fond */
-                            opacity: 0;
-                            transform: scale(0.8);
-                            transition: opacity 0.3s ease, transform 0.3s ease;
-                        }
-                    }
-                    /* Quand le checkbox est coché → on change le style du label */
-                    .btn__check:checked + .btn {
-                        .fa-regular {
-                            opacity: 0;
-                        }
-                        .btn__bg {
-                            opacity: 1;
-                            transform: scale(1.1);
-                        }
-                    }
+                flex-wrap: wrap;
+                .btn__check {
+                    display: none;
+                }
+                .btn {
+                width: 40px;
+                height: 40px;
+                border: none;
+                background-color: transparent;
+                position: relative;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                .fa-regular {
+                    font-size: 22px;
+                    color: #666;
+                    transition: opacity 0.25s ease;
+                }
+                &__bg {
+                    position: absolute;
+                    font-size: 22px;
+                    background: linear-gradient(180deg, #9356dc, #ff79da);
+                    background-clip: text;     /* Applique le fond au texte */
+                    color: transparent; /* Rend le texte transparent pour voir le fond */
+                    opacity: 0;
+                    transform: scale(0.8);
+                    transition: opacity 0.3s ease, transform 0.3s ease;
+                }
+            }
+            /* Quand le checkbox est coché → on change le style du label */
+            .btn__check:checked + .btn {
+                .fa-regular {
+                    opacity: 0;
+                }
+                .btn__bg {
+                    opacity: 1;
+                    transform: scale(1.1);
+                }
+            }
             }
             .carte-details{
                 display: flex;
@@ -213,7 +212,7 @@ $delay_between_card:1s;
                     }
                 }
             }
-        }
+        }   
         .btn-round {
             width: 218px;
             height: 50px;
@@ -233,24 +232,20 @@ $delay_between_card:1s;
             }
         }
     }
-
     /*Footer*/
     .footer-container{
         background-color: black;
         color:white;
         padding: 30px;
-
         .footer{
             display: flex;
             flex-direction: column;
             gap: 20px;
-
             img{
                 width: 139px;
                 height: 27px;
                 filter: invert(1) brightness(1.5);
             }
-
             .footer-links{
                 display: flex;
                 flex-direction: column;
@@ -259,8 +254,7 @@ $delay_between_card:1s;
                 p{
                     margin: 0;
                     font-size: 16px;
-                    font-weight: 500;
-                    
+                    font-weight: 500;                    
                 }
                 i{
                     margin-right: 12px;
@@ -270,7 +264,6 @@ $delay_between_card:1s;
             }
         }
     }
-
     @media screen and (min-width: 1020px) {
     /* Styles pour la version desktop */
         .main-container{
@@ -292,7 +285,7 @@ $delay_between_card:1s;
                 }
             }
         }
-    .footer-container {
+        .footer-container {
             display: flex;
             flex-direction: row;     
             align-items: flex-end;
@@ -302,18 +295,15 @@ $delay_between_card:1s;
             .footer{
                 display: flex;
                 flex-direction: row-reverse;
-
                 img{
                     margin-right: 40px; 
                     margin-left: 40px; 
                 }
-
                 .footer-links {
                     flex-direction: row;  
                     justify-content: flex-end;
                     align-items: baseline;
                     gap: 30px;  
-
                     p:nth-child(2){
                         margin-right: 40px;
                     }
