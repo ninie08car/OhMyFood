@@ -1,5 +1,7 @@
 @use '_variables.scss' as vars;
 
+$tertiary:#99e2d0;
+
 $delay_between_card:1s;
 .restaurant-page{
     /* --- Animation d'apparition depuis la gauche --- */
@@ -25,6 +27,9 @@ $delay_between_card:1s;
     }
     .card:nth-of-type(3) {
         animation-delay: calc($delay_between_card * 3);
+    }
+    .card:nth-of-type(4) {
+        animation-delay: calc($delay_between_card * 4);
     }
 
     h1{
@@ -138,41 +143,42 @@ $delay_between_card:1s;
                     display: none;
                 }
                 .btn {
-                width: 40px;
-                height: 40px;
-                border: none;
-                background-color: transparent;
-                position: relative;
-                cursor: pointer;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                .fa-regular {
-                    font-size: 22px;
-                    color: #666;
-                    transition: opacity 0.25s ease;
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                    background-color: transparent;
+                    position: relative;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    .fa-regular {
+                        font-size: 22px;
+                        color: #666;
+                        transition: opacity 0.25s ease;
+                    }
+
+                    &__bg {
+                        position: absolute;
+                        font-size: 22px;
+                        background: linear-gradient(180deg, #9356dc, #ff79da);
+                        background-clip: text;     /* Applique le fond au texte */
+                        color: transparent; /* Rend le texte transparent pour voir le fond */
+                        opacity: 0;
+                        transform: scale(0.8);
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                    }
                 }
-                &__bg {
-                    position: absolute;
-                    font-size: 22px;
-                    background: linear-gradient(180deg, #9356dc, #ff79da);
-                    background-clip: text;     /* Applique le fond au texte */
-                    color: transparent; /* Rend le texte transparent pour voir le fond */
-                    opacity: 0;
-                    transform: scale(0.8);
-                    transition: opacity 0.3s ease, transform 0.3s ease;
+                /* Quand le checkbox est coché → on change le style du label */
+                .btn__check:checked + .btn {
+                    .fa-regular {
+                        opacity: 0;
+                    }
+                    .btn__bg {
+                        opacity: 1;
+                        transform: scale(1.1);
+                    }
                 }
-            }
-            /* Quand le checkbox est coché → on change le style du label */
-            .btn__check:checked + .btn {
-                .fa-regular {
-                    opacity: 0;
-                }
-                .btn__bg {
-                    opacity: 1;
-                    transform: scale(1.1);
-                }
-            }
             }
             .carte-details{
                 display: flex;
@@ -193,26 +199,90 @@ $delay_between_card:1s;
                         border-radius: 2px;
                     }
                 }
-                .card{
+                .card {
+                    position: relative; /* Permet le positionnement absolu de la coche */
+                    background-color: white;
                     display: flex;
-                    flex-direction: row;
                     justify-content: space-between;
-                    align-items: flex-end;
-                    height: 69px;
-                    padding:15px;
-                    background: white;
+                    align-items: center;
                     border-radius: 15px;
-                    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25); 
-                    .card-txt{
-                        display: flex;
-                        flex-direction: column;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                    padding: 0.8rem 1rem;
+                    margin-bottom: 1rem;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    .card-txt {
+                        flex: 1;
+                        overflow: hidden;
+                        .card-title {
+                            font-size: 1rem;
+                            font-weight: 600;
+                            margin-bottom: 0.3rem;
+                            white-space:nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        .card-subtitle {
+                            font-size: 0.9rem;
+                            color: #777;
+                            white-space:nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
                     }
-                    .card-price{
-                        align-items: end;
+                    .card-price {
+                        font-weight: 600;
+                        position: relative;
+                        z-index: 1; /* reste au-dessus du fond blanc */
+                        transition: transform 0.3s ease;
+                        white-space: nowrap;
+                        margin-left: 0.5rem;
+                    }
+                    .menu-check {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 3rem;
+                        background-color: vars.$green;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transform: translateX(100%);
+                        transition: transform 0.4s ease;
+                        border-radius: 0 15px 15px 0;
+                        i {
+                            font-size: 1.2rem;
+                            color: white;
+                            transition: transform 0.3s ease;
+                            
+                        }
+                    }
+                    &:hover .menu-check {
+                    transform: translateX(0);
+                    }
+                    &:hover .card-price {
+                    transform: translateX(-1.5rem);
                     }
                 }
             }
-        }   
+
+            // Animation d’apparition fluide
+            @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+            }
+        }
         .btn-round {
             width: 218px;
             height: 50px;
@@ -311,4 +381,3 @@ $delay_between_card:1s;
             }        
         }
     }
-}
