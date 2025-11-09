@@ -54,7 +54,7 @@
   animation-delay: 600ms;
 }
 .loader .load__bar--3-inv {
-  animation-delay: 1080ms;
+  animation-delay: 1440ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -67,7 +67,7 @@
   animation-delay: 800ms;
 }
 .loader .load__bar--4-inv {
-  animation-delay: 1265ms;
+  animation-delay: 1400ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -80,7 +80,7 @@
   animation-delay: 1000ms;
 }
 .loader .load__bar--5-inv {
-  animation-delay: 1555ms;
+  animation-delay: 1045ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #FF79DA;
@@ -660,10 +660,11 @@ a {
 .restaurant-page .main-container .carte .restaurant-title {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-top: 30px;
-  width: 100%;
+  max-width: 371px;
   gap: 24px;
+  flex-wrap: wrap;
   /* Quand le checkbox est coché → on change le style du label */
 }
 .restaurant-page .main-container .carte .restaurant-title .btn__check {
