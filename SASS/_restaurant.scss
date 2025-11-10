@@ -1,7 +1,5 @@
 @use '_variables.scss' as vars;
 
-$tertiary:#99e2d0;
-
 $delay_between_card:1s;
 .restaurant-page{
     /* --- Animation d'apparition depuis la gauche --- */
@@ -157,7 +155,6 @@ $delay_between_card:1s;
                         color: #666;
                         transition: opacity 0.25s ease;
                     }
-
                     &__bg {
                         position: absolute;
                         font-size: 22px;
@@ -261,123 +258,121 @@ $delay_between_card:1s;
                         }
                     }
                     &:hover .menu-check {
-                    transform: translateX(0);
+                        transform: translateX(0);
                     }
                     &:hover .card-price {
-                    transform: translateX(-1.5rem);
+                        transform: translateX(-1.5rem);
                     }
                 }
             }
-
             // Animation d’apparition fluide
             @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-            }
-        }
-        .btn-round {
-            width: 218px;
-            height: 50px;
-            border: none;
-            border-radius: 30px;
-            color: white;
-            font-size: medium;
-            box-shadow: vars.$shadow;
-            margin-top: 30px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            background: linear-gradient(to top, #9356dc 0%, #ff79da 100%);
-            transition: all 300ms ease;
-            &:hover{
-                filter: brightness(1.2);
-                box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.35);    
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         }
     }
-    /*Footer*/
-    .footer-container{
-        background-color: black;
-        color:white;
-        padding: 30px;
-        .footer{
+    .btn-round {
+        width: 218px;
+        height: 50px;
+        border: none;
+        border-radius: 30px;
+        color: white;
+        font-size: medium;
+        box-shadow: vars.$shadow;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        background: linear-gradient(to top, #9356dc 0%, #ff79da 100%);
+        transition: all 300ms ease;
+        &:hover{
+            filter: brightness(1.2);
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.35);    
+        }
+    }
+}
+/*Footer*/
+.footer-container{
+    background-color: black;
+    color:white;
+    padding: 30px;
+    .footer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        img{
+            width: 139px;
+            height: 27px;
+            filter: invert(1) brightness(1.5);
+        }
+        .footer-links{
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            img{
-                width: 139px;
-                height: 27px;
-                filter: invert(1) brightness(1.5);
+            gap: 10px;
+            text-align: left;
+            p{
+                margin: 0;
+                font-size: 16px;
+                font-weight: 500;                    
             }
-            .footer-links{
+            i{
+                margin-right: 12px;
+                width: 12px;
+                height: 12px;
+            }    
+        }
+    }
+}
+@media screen and (min-width: 1020px) {
+/* Styles pour la version desktop */
+    .main-container{
+        .image-container{
+            height: 383px;
+        }
+        .carte{
+            max-width: 1055px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            .restaurant-title{
                 display: flex;
-                flex-direction: column;
-                gap: 10px;
-                text-align: left;
-                p{
-                    margin: 0;
-                    font-size: 16px;
-                    font-weight: 500;                    
-                }
-                i{
-                    margin-right: 12px;
-                    width: 12px;
-                    height: 12px;
-                }    
+                flex-direction: row;
+                justify-content: center;
+            }
+            .carte-details{
+                max-width: 634px;
             }
         }
     }
-    @media screen and (min-width: 1020px) {
-    /* Styles pour la version desktop */
-        .main-container{
-            .image-container{
-                height: 383px;
-            }
-            .carte{
-                max-width: 1055px;
-                width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-                .restaurant-title{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                }
-                .carte-details{
-                    max-width: 634px;
-                }
-            }
-        }
-        .footer-container {
+    .footer-container {
+        display: flex;
+        flex-direction: row;     
+        align-items: flex-end;
+        justify-content: flex-end; 
+        height: 114px;
+        padding: 30px 25px 30px 25px;
+        .footer{
             display: flex;
-            flex-direction: row;     
-            align-items: flex-end;
-            justify-content: flex-end; 
-            height: 114px;
-            padding: 30px 25px 30px 25px;
-            .footer{
-                display: flex;
-                flex-direction: row-reverse;
-                img{
-                    margin-right: 40px; 
-                    margin-left: 40px; 
+            flex-direction: row-reverse;
+            img{
+                margin-right: 40px; 
+                margin-left: 40px; 
+            }
+            .footer-links {
+                flex-direction: row;  
+                justify-content: flex-end;
+                align-items: baseline;
+                gap: 30px;  
+                p:nth-child(2){
+                    margin-right: 40px;
                 }
-                .footer-links {
-                    flex-direction: row;  
-                    justify-content: flex-end;
-                    align-items: baseline;
-                    gap: 30px;  
-                    p:nth-child(2){
-                        margin-right: 40px;
-                    }
-                }
-            }        
-        }
+            }
+        }        
     }
+}

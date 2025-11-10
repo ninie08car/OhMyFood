@@ -3,10 +3,6 @@
 //Loader OhMyFood
 
 // Variables pour le loader
-$primary: #9356DC;
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
-$cd-bars-inv: #0E397F;
 $size: 3vh;
 $anim-dur: 1000ms;
 $anim-delay: $anim-dur / 5;
@@ -27,7 +23,7 @@ $anim-delay: $anim-dur / 5;
     display: flex;
     justify-content: space-evenly;
     &__bar {
-        background-color: $primary;
+        background-color: vars.$primary;
         height: 100%;
         width: $size;
         animation: bars $anim-dur backwards infinite ease-in-out;
@@ -41,7 +37,7 @@ $anim-delay: $anim-dur / 5;
                 animation-delay: $anim-delay * $i + random(100)*15ms;
                 animation-direction: alternate-reverse;
                 animation-fill-mode: forwards;
-                background-color: $secondary;
+                background-color: vars.$secondary;
                 &:hover {
                     animation-play-state: paused;
                 }
@@ -53,7 +49,7 @@ $anim-delay: $anim-dur / 5;
   &__title {
     font-family: 'Shrikhand', cursive;
     font-size: 1.8rem;
-    color: $primary;
+    color: vars.$primary;
     margin-top: 1rem;
     animation: textFade 3s ease-in-out;
   }
