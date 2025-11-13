@@ -28,7 +28,7 @@
   animation-delay: 200ms;
 }
 .loader .load__bar--1-inv {
-  animation-delay: 635ms;
+  animation-delay: 1700ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #ff79da;
@@ -41,7 +41,7 @@
   animation-delay: 400ms;
 }
 .loader .load__bar--2-inv {
-  animation-delay: 985ms;
+  animation-delay: 1750ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #ff79da;
@@ -54,7 +54,7 @@
   animation-delay: 600ms;
 }
 .loader .load__bar--3-inv {
-  animation-delay: 1215ms;
+  animation-delay: 1170ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #ff79da;
@@ -67,7 +67,7 @@
   animation-delay: 800ms;
 }
 .loader .load__bar--4-inv {
-  animation-delay: 1970ms;
+  animation-delay: 1190ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #ff79da;
@@ -80,7 +80,7 @@
   animation-delay: 1000ms;
 }
 .loader .load__bar--5-inv {
-  animation-delay: 1570ms;
+  animation-delay: 1225ms;
   animation-direction: alternate-reverse;
   animation-fill-mode: forwards;
   background-color: #ff79da;
@@ -543,7 +543,7 @@ a {
     margin-right: 40px;
   }
 }
-@media screen and (min-width: 1440) {
+@media (min-width: 1440px) {
   .fonctionnement {
     padding-left: 180px;
     padding-right: 180px;

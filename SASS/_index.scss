@@ -528,13 +528,13 @@ a{
     }
 }
 
-@media screen and (min-width: 1440){
-    .fonctionnement{
-        padding-left: 180px;
-        padding-right: 180px;
-    }
-    .restaurants{
-        padding-left: 180px;
-        padding-right: 180px;
-    }
+@media (min-width: 1440px) {
+  .fonctionnement {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
+  .restaurants {
+    padding-left: 180px;
+    padding-right: 180px;
+  }
 }
