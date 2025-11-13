@@ -37,7 +37,7 @@ $anim-delay: $anim-dur / 5;
                 animation-delay: $anim-delay * $i + random(100)*15ms;
                 animation-direction: alternate-reverse;
                 animation-fill-mode: forwards;
-                background-color: vars.$secondary;
+                background-color: vars.$pink2;
                 &:hover {
                     animation-play-state: paused;
                 }
@@ -118,7 +118,7 @@ a{
     img{
         display: block;
         width: 100%;
-        height: 100%;
+        height: 200px;
         object-fit: cover;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
@@ -288,6 +288,7 @@ a{
         gap:20px;
 
         .card {
+            position: relative;
             display: flex;
             flex-direction: column;
             height: 251px;
@@ -298,8 +299,13 @@ a{
             .image-container{
                 position: relative;
                 width: 100%;
-                height: 231px;
+                height: 200px;
                 overflow: hidden;
+                .image-container img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
 
                 .badge {
                     position: absolute;
@@ -314,65 +320,67 @@ a{
                 }
             }
             .card-txt{
-                padding:10px;
-
+                padding: 5px;
                 .card-header{
                     display: flex;
+                    flex-direction: column;
                     justify-content: space-between;
-                    align-items: center;
-
+                    align-items: flex-start;
                     .card-title{
                         margin: 0;
                         font-size: 18px;
                         font-weight: bold;
                     }
-                    .btn__check {
-                        display: none;
-                    }
-
-                        .btn {
-                        width: 40px;
-                        height: 40px;
-                        border: none;
-                        background-color: transparent;
-                        position: relative;
-                        cursor: pointer;
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        .fa-regular {
-                            font-size: 22px;
-                            color: #666;
-                            transition: opacity 0.25s ease;
-                        }
-
-                        &__bg {
-                            position: absolute;
-                            font-size: 22px;
-                            background: linear-gradient(180deg, #9356dc, #ff79da);
-                            background-clip: text;     /* Applique le fond au texte */
-                            color: transparent; /* Rend le texte transparent pour voir le fond */
-                            opacity: 0;
-                            transform: scale(0.8);
-                            transition: opacity 0.3s ease, transform 0.3s ease;
-                        }
-                    }
-                    /* Quand le checkbox est coché → on change le style du label */
-                    .btn__check:checked + .btn {
-                        .fa-regular {
-                            opacity: 0;
-                        }
-                        .btn__bg {
-                            opacity: 1;
-                            transform: scale(1.1);
-                        }
-                    }
                 }
             }
-        }             
+            .card-like{
+                position: absolute;
+                bottom:10px;
+                right: 10px;
+                z-index: 10;
+                .btn__check {
+                    display: none;
+                }
+                .btn {
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                    background-color: transparent;
+                    position: relative;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    .fa-regular {
+                        font-size: 22px;
+                        color: #666;
+                        transition: opacity 0.25s ease;
+                    }
+                    &__bg {
+                        position: absolute;
+                        font-size: 22px;
+                        background: linear-gradient(180deg, #9356dc, #ff79da);
+                        background-clip: text;     /* Applique le fond au texte */
+                        color: transparent; /* Rend le texte transparent pour voir le fond */
+                        opacity: 0;
+                        transform: scale(0.8);
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                    }
+                }
+                /* Quand le checkbox est coché → on change le style du label */
+                .btn__check:checked + .btn {
+                    .fa-regular {
+                        opacity: 0;
+                    }
+                    .btn__bg {
+                        opacity: 1;
+                        transform: scale(1.1);
+                    }
+                }
+            }            
+        }
     }
 }
-
 
 /*Footer*/
 .footer-container{
@@ -415,11 +423,10 @@ a{
     }
 }
 
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 1020px){
   /* Styles pour la version desktop */
     section{
         width: 100%;
-        max-width: 1440px;
         margin: 0 auto;
         box-sizing: border-box;
         }
@@ -454,8 +461,8 @@ a{
         }
     }
     .fonctionnement{
-        padding-left: 180px;
-        padding-right: 180px;
+        padding-left: 90px;
+        padding-right: 90px;
         background-color: white;
 
 
@@ -471,8 +478,8 @@ a{
     }
 
     .restaurants{
-        padding-left: 180px;
-        padding-right: 180px;
+        padding-left: 90px;
+        padding-right: 90px;
         
         .restaurants-cards{
             flex-direction: row;
@@ -480,10 +487,10 @@ a{
             justify-content: center;
             gap: 40px;
 
-            a{
+            .card{
                 flex-grow: 1; 
                 flex-basis: 0;
-                min-width: 40%;
+                min-width: 45%;
             } 
             
             .card .purple{
@@ -518,5 +525,16 @@ a{
                 }
             }
         }        
+    }
+}
+
+@media screen and (min-width: 1440){
+    .fonctionnement{
+        padding-left: 180px;
+        padding-right: 180px;
+    }
+    .restaurants{
+        padding-left: 180px;
+        padding-right: 180px;
     }
 }
