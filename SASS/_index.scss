@@ -1,58 +1,56 @@
 @use '_variables.scss' as vars;
 
 //Loader OhMyFood
-
 // Variables pour le loader
 $size: 3vh;
 $anim-dur: 1000ms;
 $anim-delay: $anim-dur / 5;
 
 .loader {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  z-index: 9999;
-  animation: fadeOut 1s ease 2.8s forwards; // disparition après 2,8s
-  .load {
-    width: $size*10;
-    height: $size*7.5;
+    position: fixed;
+    inset: 0;
     display: flex;
-    justify-content: space-evenly;
-    &__bar {
-        background-color: vars.$primary;
-        height: 100%;
-        width: $size;
-        animation: bars $anim-dur backwards infinite ease-in-out;
-        animation-play-state: running;
-        @for $i from 1 through 5 {
-            &--#{$i} {
-                animation-direction:alternate;
-                animation-delay: $anim-delay * $i;
-            }
-            &--#{$i}-inv {
-                animation-delay: $anim-delay * $i + random(100)*15ms;
-                animation-direction: alternate-reverse;
-                animation-fill-mode: forwards;
-                background-color: vars.$pink2;
-                &:hover {
-                    animation-play-state: paused;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 9999;
+    animation: fadeOut 1s ease 2.8s forwards; 
+    .load {
+        width: $size*10;
+        height: $size*7.5;
+        display: flex;
+        justify-content: space-evenly;
+        &__bar {
+            background-color: vars.$primary;
+            height: 100%;
+            width: $size;
+            animation: bars $anim-dur backwards infinite ease-in-out;
+            animation-play-state: running;
+            @for $i from 1 through 5 {
+                &--#{$i} {
+                    animation-direction:alternate;
+                    animation-delay: $anim-delay * $i;
+                }
+                &--#{$i}-inv {
+                    animation-delay: $anim-delay * $i + random(100)*15ms;
+                    animation-direction: alternate-reverse;
+                    animation-fill-mode: forwards;
+                    background-color: vars.$pink2;
+                    &:hover {
+                        animation-play-state: paused;
+                    }
                 }
             }
         }
     }
-}
-
-  &__title {
+    &__title {
     font-family: 'Shrikhand', cursive;
     font-size: 1.8rem;
     color: vars.$primary;
     margin-top: 1rem;
     animation: textFade 3s ease-in-out;
-  }
+    }
 }
 
 // Animations
@@ -85,7 +83,6 @@ $anim-delay: $anim-dur / 5;
         transform: scaleY(1.0);
     }
 }
-
 
 /*Général*/
 *{
@@ -222,7 +219,7 @@ a{
         flex-direction: column;
         margin: 0;
         align-items: center;
-        gap: 30px; /* espace entre les bulles */
+        gap: 30px;
     }
     .step {
         display: flex;
@@ -253,7 +250,7 @@ a{
             background: vars.$background;
             border-radius: 20px;
             padding: 8px 16px;
-            width: 322px; /* ajuste selon ton design */
+            width: 322px; 
             height:72px ;
             font-size: 16px;
             font-weight:bold;
@@ -285,28 +282,29 @@ a{
     .restaurants-cards{
         display: flex;
         flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
         gap:20px;
 
         .card {
             position: relative;
             display: flex;
             flex-direction: column;
+            max-width: 490px;
             height: 251px;
             background: white;
             border-radius: 15px;
             overflow: hidden;
-
             .image-container{
                 position: relative;
                 width: 100%;
-                height: 200px;
+                height: 180px;
                 overflow: hidden;
                 .image-container img{
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
                 }
-
                 .badge {
                     position: absolute;
                     top: 10px;
@@ -320,7 +318,7 @@ a{
                 }
             }
             .card-txt{
-                padding: 5px;
+                padding: 15px;
                 .card-header{
                     display: flex;
                     flex-direction: column;
@@ -335,7 +333,7 @@ a{
             }
             .card-like{
                 position: absolute;
-                bottom:10px;
+                bottom:20px;
                 right: 10px;
                 z-index: 10;
                 .btn__check {
@@ -360,14 +358,13 @@ a{
                         position: absolute;
                         font-size: 22px;
                         background: linear-gradient(180deg, #9356dc, #ff79da);
-                        background-clip: text;     /* Applique le fond au texte */
-                        color: transparent; /* Rend le texte transparent pour voir le fond */
+                        background-clip: text;    
+                        color: transparent; 
                         opacity: 0;
                         transform: scale(0.8);
                         transition: opacity 0.3s ease, transform 0.3s ease;
                     }
                 }
-                /* Quand le checkbox est coché → on change le style du label */
                 .btn__check:checked + .btn {
                     .fa-regular {
                         opacity: 0;
@@ -387,33 +384,27 @@ a{
     background-color: black;
     color:white;
     padding: 30px;
-
     .footer{
         display: flex;
         flex-direction: column;
         gap: 20px;
-
         img{
             width: 139px;
             height: 27px;
             filter: invert(1) brightness(1.5);
         }
-
         .footer-links{
             display: flex;
             flex-direction: column;
             gap: 10px;
             text-align: left;
-
             p{
                 margin: 0;
                 font-size: 16px;
-
                 &:has(i) {
                     font-weight: 500; 
                 }
             }
-
             i{
                 margin-right: 12px;
                 width: 12px;
@@ -423,30 +414,24 @@ a{
     }
 }
 
-@media screen and (min-width: 1020px){
-  /* Styles pour la version desktop */
+@media screen and (min-width: 1024px){
     section{
         width: 100%;
         margin: 0 auto;
         box-sizing: border-box;
-        }
-
+    }
     .header-container{
         height: 146px;
     }
-
     .header{
         box-shadow: none;
     }
-
     .location{
         box-shadow: none;
-    }
-    
+    }    
     .hero{
         margin:0;
         gap: 10px;
-
         .section-title{
             font-size: 40px;
             font-weight: bold;
@@ -454,7 +439,6 @@ a{
             text-align: center;
             margin: 0;
         }
-
         p{
             width: 100%;
             font-size: 20px;
@@ -464,35 +448,28 @@ a{
         padding-left: 90px;
         padding-right: 90px;
         background-color: white;
-
-
         .steps{
             flex-direction: row;
             justify-content: space-between;
             gap: 20px;
-
             .step{
                 width: auto;
             }
         }
     }
-
     .restaurants{
         padding-left: 90px;
-        padding-right: 90px;
-        
+        padding-right: 90px;    
         .restaurants-cards{
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
             gap: 40px;
-
             .card{
                 flex-grow: 1; 
                 flex-basis: 0;
                 min-width: 45%;
-            } 
-            
+            }             
             .card .purple{
                 color:vars.$primary;
             }
@@ -508,18 +485,15 @@ a{
         .footer{
             display: flex;
             flex-direction: row-reverse;
-
             img{
                 margin-right: 40px; 
                 margin-left: 40px; 
             }
-
             .footer-links {
                 flex-direction: row;  
                 justify-content: flex-end;
                 align-items: baseline;
                 gap: 30px;  
-
                 p:nth-child(2){
                     margin-right: 40px;
                 }

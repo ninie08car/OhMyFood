@@ -2,7 +2,6 @@
 
 $delay_between_card:1s;
 .restaurant-page{
-    /* --- Animation d'apparition depuis la gauche --- */
     @keyframes slide-in-right {
         0% {
             transform: translateX(-9999px);
@@ -159,14 +158,13 @@ $delay_between_card:1s;
                         position: absolute;
                         font-size: 22px;
                         background: linear-gradient(180deg, #9356dc, #ff79da);
-                        background-clip: text;     /* Applique le fond au texte */
-                        color: transparent; /* Rend le texte transparent pour voir le fond */
+                        background-clip: text;     
+                        color: transparent; 
                         opacity: 0;
                         transform: scale(0.8);
                         transition: opacity 0.3s ease, transform 0.3s ease;
                     }
                 }
-                /* Quand le checkbox est coché → on change le style du label */
                 .btn__check:checked + .btn {
                     .fa-regular {
                         opacity: 0;
@@ -197,7 +195,7 @@ $delay_between_card:1s;
                     }
                 }
                 .card {
-                    position: relative; /* Permet le positionnement absolu de la coche */
+                    position: relative; 
                     background-color: white;
                     display: flex;
                     justify-content: space-between;
@@ -231,7 +229,7 @@ $delay_between_card:1s;
                     .card-price {
                         font-weight: 600;
                         position: relative;
-                        z-index: 1; /* reste au-dessus du fond blanc */
+                        z-index: 1; 
                         transition: transform 0.3s ease;
                         white-space: nowrap;
                         margin-left: 0.5rem;
@@ -265,7 +263,6 @@ $delay_between_card:1s;
                     }
                 }
             }
-            // Animation d’apparition fluide
             @keyframes fadeInUp {
                 0% {
                     opacity: 0;
@@ -330,7 +327,6 @@ $delay_between_card:1s;
     }
 }
 @media screen and (min-width: 1020px) {
-/* Styles pour la version desktop */
     .main-container{
         .image-container{
             height: 383px;
