@@ -139,6 +139,7 @@ $delay_between_card:1s;
                 .btn__check {
                     display: none;
                 }
+                
                 .btn {
                     width: 40px;
                     height: 40px;
@@ -187,10 +188,10 @@ $delay_between_card:1s;
                         content: '';
                         position: absolute;
                         left: 0;
-                        bottom: -5px; // espace entre le texte et le trait
-                        width: 60px;  // longueur du trait (ajuste selon ton design)
-                        height: 4px;  // épaisseur du trait
-                        background-color:vars.$green; // vert menthe clair
+                        bottom: -5px; 
+                        width: 60px;  
+                        height: 4px;  
+                        background-color:vars.$green; 
                         border-radius: 2px;
                     }
                 }
@@ -251,8 +252,7 @@ $delay_between_card:1s;
                         i {
                             font-size: 1.2rem;
                             color: white;
-                            transition: transform 0.3s ease;
-                            
+                            transition: transform 0.3s ease;                            
                         }
                     }
                     &:hover .menu-check {
